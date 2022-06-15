@@ -6,6 +6,6 @@ metadata:
       app:  nginx
       tier: frontend
 spec:
-  container:
+  containers:
     - name:   nginx-container
       image:  nginx
