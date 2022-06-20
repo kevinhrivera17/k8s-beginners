@@ -1,0 +1,25 @@
+#Is basically exact as a replicaset, check file replicaset-definition.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-replicaset
+  labels:
+    app: myapp
+    type: frontend
+spec:
+  template:
+    #pod template starts here
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+    #pod template ends here
+  replicas: 3
+  selector:
+    matchLabels:
+      type: front-end #taken from pod's label
