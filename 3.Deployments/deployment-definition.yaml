@@ -22,4 +22,5 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx #taken from pod's label
+      app: myapp
+      type: front-end #taken from pod's label
