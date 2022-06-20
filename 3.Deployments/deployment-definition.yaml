@@ -4,8 +4,8 @@ kind: Deployment
 metadata:
   name: myapp-replicaset
   labels:
-    app: myapp
-    type: frontend
+    tier: frontend
+    app: nginx
 spec:
   template:
     #pod template starts here
@@ -22,4 +22,4 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      type: front-end #taken from pod's label
+      app: nginx #taken from pod's label
